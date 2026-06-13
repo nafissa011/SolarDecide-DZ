@@ -44,7 +44,7 @@
 **SolarDecide DZ** est une web application **full-stack** d'aide à la décision pour le déploiement de centrales photovoltaïques en Algérie. Elle combine :
 
 - 🛰️ Un **dataset NASA POWER** réel de **12,7 millions** de mesures horaires couvrant **58 wilayas** et **287 communes** algériennes sur **5 années** (2019-2023),
-- 🤖 Plusieurs **modèles d'IA entraînés** (Random Forest, Hybrid Ridge + MLP, et family Transformer : PatchTST / TFT / N-HiTS) pour la **prévision GHI** et le **classement multicritère** des zones,
+- 🤖 Plusieurs **modèles d'IA entraînés** (Random Forest, Hybrid Ridge + MLP, et family Transformer : PatchTST) pour la **prévision GHI** et le **classement multicritère** des zones,
 - 💰 Un moteur de **calcul ROI financier** (CAPEX, OPEX, NPV, IRR, LCOE, payback) avec **3 scénarios** (conservateur / base / optimiste),
 - 📄 La **génération automatique de rapports PDF** (Investisseur / Gouvernement / EPC),
 - 🌐 Une **interface SPA multilingue** (FR/EN) avec mode hors ligne (**PWA**), 13 pages métier, et une **administration complète**.
@@ -162,11 +162,6 @@
 | Modèle | Famille | Fichier | Métriques | Usage |
 |---|---|---|---|---|
 | **Random Forest** ✅ | Ensemble | `best_model_RandomForest.pkl` | MAPE **18.2 %** · Accuracy **81.8 %** | Production — `/api/forecast-simple/<wilaya>` |
-| PatchTST | Transformer | `patchtst.pt` (1.2M params) | — | À la demande |
-| TFT | Transformer | `tft.pt` (2.1M params) | — | À la demande |
-| N-HiTS | MLP hiérarchique | `nhits.pt` (0.8M params) | — | Fallback rapide |
-| VMD-PatchTST | Hybrid (3 branches) | — | — | Désactivé par défaut |
-| Persistence / Derived | Naive | — | — | Variables secondaires (DHI/DNI/T2M/WS10M) |
 
 **Pipeline** : agrégation mensuelle → fenêtre glissante `LOOK_BACK = 6` → prédiction GHI normalisé → dénormalisation → conversion kWh (100 kWc, PR = 0.80) → autorégression sur N pas.
 
