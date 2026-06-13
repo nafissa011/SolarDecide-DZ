@@ -211,7 +211,7 @@ score = 0.35·mean_GHI + 0.20·sunshine_hours + 0.15·peak_GHI
 
 Seuil heure ensoleillée : `GHI > 0.15 kWh/m²`.
 
-
+---
 ---
 
 ## 🏗️ Architecture technique
