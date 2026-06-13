@@ -211,6 +211,8 @@ Seuil heure ensoleillée : `GHI > 0.15 kWh/m²`.
 
 ---
 
+---
+
 ## 🏗️ Architecture technique
 
 ```
