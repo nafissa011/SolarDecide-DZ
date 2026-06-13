@@ -99,7 +99,7 @@
 |---|---|
 | **Source** | NASA POWER (`data_source = NASA_real`) |
 | **Format** | Apache Parquet (compression Snappy) |
-| **Taille** | ~96 MB |
+| **Taille** | ~101 MB |
 | **Granularité temporelle** | Horaire (1 mesure / heure) |
 | **Période couverte** | 2019-01-01 00:00 → 2023-12-31 23:00 (5 ans, 1826 jours) |
 | **Lignes** | **12 752 784** |
